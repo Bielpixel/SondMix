@@ -3,10 +3,7 @@
 
 ## 🔩 Instalação
 ```
-npm install ytdl-core
-npm install popyt
-npm install node-fetch
-npm install ytpl
+npm isntall discord-music-system@latest
 ```
 
 ## 💻 Exemplo do código
@@ -87,7 +84,6 @@ client.login('some token'); // LFaça login com seu token de bot. Você pode enc
 
 * Nota: Este pacote não é afiliado ao Discord ou YouTube. *
 
-Se você tiver qualquer problema, pode contatar: `RemyK # 3876` ou `NULO#9638`.
 
 ## **Made with ❤ by RemyK**
- **Remodelado por NULO**
+ **Versão do Nulo**
