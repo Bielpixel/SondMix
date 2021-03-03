@@ -123,7 +123,7 @@ class MusicBot {
             nothing: Language.presence.nothing || '🎵 Nothing',
         };
 
-        console.log(`\x1b[33m------- Discord Music System -------\n\x1b[33m> \x1b[32mVersion: \x1b[37m${Package.version}\n\x1b[33m> \x1b[32mState: \x1b[37m\x1b[7mLoaded\x1b[0m\n\x1b[33m------------- Music Bot ------------\x1b[37m\n\x1b[44mNEW:\x1b[0m  \x1b[4mCustom language translation: edit the language.json in the language folder!\x1b[0m`);
+        console.log(`\x1b[33m-------  SondMix -------\n\x1b[33m> \x1b[32mVersion: \x1b[37m${Package.version}\n\x1b[33m> \x1b[32mState: \x1b[37m\x1b[7mCarregado\x1b[0m\n\x1b[33m-------------Robo de Música------------\x1b[37m\n\x1b[44mNEW:\x1b[0m  \x1b[4mCustomise a linguaguem no arquivo language.json na pasta language \x1b[0m`);
     };
 
     /**

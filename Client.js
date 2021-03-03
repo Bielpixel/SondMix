@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const token = require('./token.json'); 
 const client = new Discord.Client();
-const ColorMusic = require('./Music/src/ColorMusic.js');
+const ColorMusic = require('./Music/src/SondMix.js');
 const bot = new ColorMusic({
     botPrefix:"c!",
     ytApiKey:"AIzaSyAIBEppMcUFtTpXI8M9jWD0fK71Vr0pw5M",
