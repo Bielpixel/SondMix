@@ -1,2 +1,2 @@
-const MusicBot = require('./Music/src/ColorMusic');
+const MusicBot = require('./Music/src/SondMix');
 module.exports = MusicBot;
