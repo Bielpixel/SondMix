@@ -80,7 +80,7 @@ client.login('some token'); // LFaça login com seu token de bot. Você pode enc
 
 
 ## 🚀 Outros
-** Este pacote está sob licença do MIT. **
+** Este pacote está sob licença do Apache License. **
 
 * Nota: Este pacote não é afiliado ao Discord ou YouTube. *
 
