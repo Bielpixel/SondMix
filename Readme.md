@@ -3,7 +3,10 @@
 
 ## 🔩 Instalação
 ```
-npm install discord-music-system@latest
+npm install ytdl-core
+npm install popyt
+npm install node-fetch
+npm install ytpl
 ```
 
 ## 💻 Exemplo do código
