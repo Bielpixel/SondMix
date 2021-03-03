@@ -1,5 +1,5 @@
 
-# 🎵 Discord-Music-System
+# 🎵 Robo de Musica (Discord)
 
 ## 🔩 Instalação
 ```
