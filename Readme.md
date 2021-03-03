@@ -37,7 +37,7 @@ client.login('some token'); // LFaça login com seu token de bot. Você pode enc
   * `join`
   * **+ `<search string | video URL | playlist URL>`**
 
-* **Papar**
+* **Parar**
   * `stop`
   * `kill`
   * `destroy`
@@ -58,7 +58,7 @@ client.login('some token'); // LFaça login com seu token de bot. Você pode enc
   * `list`
   * `show`
 
-* **VOLUME**
+* **Volume**
   * `volume`
   * `setvolume`
   * **+ `<valid number beetween 0 and 100>`**
