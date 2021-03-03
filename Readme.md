@@ -31,29 +31,29 @@ client.login('some token'); // LFaça login com seu token de bot. Você pode enc
 * Você pode personalizar o idioma do bot editando o `language.json` na pasta` language` (3 traduções incluídas).
 
 ## 🤖 Comandos
-* **PLAY**
+* **Jogar**
   * `play`, 
   * `add`, 
   * `join`
   * **+ `<search string | video URL | playlist URL>`**
 
-* **STOP**
+* **Papar**
   * `stop`
   * `kill`
   * `destroy`
   * `leave`
 
-* **NOW PLAYING**
+* **Jogando agora**
   * `np`
   * `nowplaying`
   * `current`
 
-* **SKIP**
+* **Ignorar**
   * `skip`
   * `next`
   * `>>`
 
-* **QUEUE**
+* **Lista**
   * `queue`
   * `list`
   * `show`
@@ -63,24 +63,23 @@ client.login('some token'); // LFaça login com seu token de bot. Você pode enc
   * `setvolume`
   * **+ `<valid number beetween 0 and 100>`**
 
-* **PAUSE**
+* **Pausar**
   * `pause`
 
-* **RESUME**
+* **Resumir**
   * `resume`
 
-* **REMOVE**
+* **Remover**
   * `remove`
   * `delete`
   * **+ `<valid number of a song position in the queue>`**
 
-* **LYRICS**
+* **Letras**
   * `lyrics`
   * **+ `<song title> || or no args if a song is playing`**
 
 
-## 🚀 Other
-
+## 🚀 Outros
 ** Este pacote está sob licença do MIT. **
 
 * Nota: Este pacote não é afiliado ao Discord ou YouTube. *
