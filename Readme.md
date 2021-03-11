@@ -85,8 +85,7 @@ client.login('some token'); // LFaça login com seu token de bot. Você pode enc
 * Nota: Este pacote não é afiliado ao Discord ou YouTube. *
 
 
-## **Made with ❤ by RemyK**
- **Versão do Nulo**
+## **feito por NULO**
  
  ```
  Depois de instalar o código no terminal digite npm i discord.js -S e npm i discord-music-system@latest Entre no site http://discord.com/developers/applications/ e crie uma Aplicação, clique em bot e adicionar bot pegue o token e crie um arquivo token.json.
