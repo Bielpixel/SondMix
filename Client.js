@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const token = require('./json/token.json')
 const client = new Discord.Client();
-const ColorMusic = require('./Music/src/SondMix.js');
-const bot = new ColorMusic({
-    botPrefix:"p.",
+const SondMix = require('./Music/src/SondMix.js');
+const bot = new SondMix({
+    botPrefix:"s.",
     ytApiKey:"AIzaSyAIBEppMcUFtTpXI8M9jWD0fK71Vr0pw5M",
     botClient: client
 })
@@ -16,7 +16,7 @@ client.on('message', message =>{
 client.on("ready", () => {
     console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais.`)
     let activities = [
-        `Use p.`,
+        `Use s.`,
         `Tocando em ${client.guilds.cache.size} servidores.`,
         `${client.channels.cache.size} canais.`,
     ],
