@@ -6,17 +6,18 @@ const bot = new SondMix({
     botPrefix:"s.",
     ytApiKey:"AIzaSyAIBEppMcUFtTpXI8M9jWD0fK71Vr0pw5M",
     botClient: client
-})
+});
+
 client.on('message', message =>{
     if(message.content.startsWith(bot.prefix)){
         bot.onMessage(message)
     }
 });
-
+const prefix = require('./json/fix.json')
 client.on("ready", () => {
     console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais.`)
     let activities = [
-        `Use s.`,
+        `Use ${prefix.fix}`,
         `Tocando em ${client.guilds.cache.size} servidores.`,
         `${client.channels.cache.size} canais.`,
     ],
