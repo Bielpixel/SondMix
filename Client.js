@@ -7,17 +7,29 @@ const bot = new SondMix({
     ytApiKey:"AIzaSyAIBEppMcUFtTpXI8M9jWD0fK71Vr0pw5M",
     botClient: client
 });
-
+const prefix = "s."
 client.on('message', message =>{
     if(message.content.startsWith(bot.prefix)){
         bot.onMessage(message)
     }
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+
+    const commandBody = message.content.slice(prefix.length);
+    const args = commandBody.split(' ');
+    const command = args.shift().toLowerCase();
+
+    if (command === "ping") {
+        const timeTaken = Date.now() - message.createdTimestamp;
+        message.reply(`A latência é de: ${timeTaken}ms.`);
+    }
 });
-const prefix = require('./json/fix.json')
+
+const status = require('./json/fix.json')
 client.on("ready", () => {
     console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais.`)
     let activities = [
-        `Use ${prefix.fix}`,
+        `Use ${status.fix}`,
         `Tocando em ${client.guilds.cache.size} servidores.`,
         `${client.channels.cache.size} canais.`,
     ],
@@ -36,4 +48,5 @@ client.on("guildDelete", guild => {
     console.log(`O bot foi removido do servidor: ${guild.name} (id: ${guild.id})`);
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
+
 client.login(token.token)

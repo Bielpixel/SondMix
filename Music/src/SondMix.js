@@ -126,30 +126,7 @@ class MusicBot {
         console.log(`\x1b[33m-------  SondMix -------\n\x1b[33m> \x1b[32mVersion: \x1b[37m${Package.version}\n\x1b[33m> \x1b[32mState: \x1b[37m\x1b[7mCarregado\x1b[0m\n\x1b[33m-------------Robo de Música------------\x1b[37m\n\x1b[44mNEW:\x1b[0m  \x1b[4mCustomise a linguaguem no arquivo language.json na pasta language \x1b[0m`);
     };
 
-    /**
-     * Enable the music system using this line.
-     * @api public
-     * @param {message} message The message from your discord code.
-     * @example
-     * const Discord = require('discord.js'); // Require discord.js
-     * const client = new Discord.Client(); // Create the bot client.
-     * const MusicBot = require('discord-music-system'); // Require the best package ever created on NPM (= require discord-music-system)
-     *
-     * const bot = new MusicBot({
-     *    botPrefix: 'some prefix', // Example: !
-     *    ytApiKey: 'your Ytb API key', // Video to explain how to get it: https://www.youtube.com/watch?v=VqML5F8hcRQ
-     *    botClient: client // Your Discord client. Here we're using discord.js so it's the Discord.Client()
-     * });
-     *
-     * client.on('message', message => { // When the bot receive a message
-     *        if(message.content.startsWith(bot.prefix)) { // If the message starts with your prefix
-     *           bot.onMessage(message); // The music-system must read the message, to check if it is a music command and execute it.
-     *        };
-     * });
-     *
-     * client.login('some token'); // Login with your bot token. You can find the token at https://discord.com/developers/applications/
-     * 
-     */
+
     async onMessage(message) {
         if (!message) {
             throw new Error(this.errorMsg + 'The message is required on the onMessage function.');
@@ -444,16 +421,16 @@ class MusicBot {
             const HelpEmbed = new MessageEmbed()
                 .setTitle('Help Panel')
                 .setColor('BLUE')
-                .addField(`\`${this.prefix}play\``, `**Aliases:**\n> \`${this.prefix}add\`\n> \`${this.prefix}join\`\n **Description:**\n> Play a song or add it to the queue.`, true)
-                .addField(`\`${this.prefix}stop\``, `**Aliases:**\n> \`${this.prefix}kill\`\n> \`${this.prefix}destroy\`\n> \`${this.prefix}leave\`\n**Description:**\n> Stop the currently played song and clear the queue.`, true)
-                .addField(`\`${this.prefix}pause\``, `**Description:**\n> Pause the current song.`, true)
-                .addField(`\`${this.prefix}resume\``, `**Description:**\n> Resume music if it was paused.`, true)
-                .addField(`\`${this.prefix}queue\``, `**Aliases:**\n> \`${this.prefix}list\`\n> \`${this.prefix}show\`\n **Description:**\n> Display each song title in queue.`, true)
-                .addField(`\`${this.prefix}np\``, `**Aliases:**\n> \`${this.prefix}nowplaying\`\n> \`${this.prefix}current\`\n **Description:**\n> Display the currently played song.`, true)
-                .addField(`\`${this.prefix}volume\``, `**Aliases:**\n> \`${this.prefix}setvolume\`\n **Description:**\n> Change music volume.`, true)
-                .addField(`\`${this.prefix}remove\``, `**Aliases:**\n> \`${this.prefix}delete\`\n **Description:**\n> Remove from the queue the song at position index.`, true)
-                .addField(`\`${this.prefix}lyrics\``, `**Description: Displyay the lyrics of a song.**\n> Show `, true)
-                .addField(`\`${this.prefix}skip\``, `**Aliases:**\n> \`${this.prefix}next\`\n> \`${this.prefix}>>\`\n **Description:**\n> Skip the currently played song`,true)
+                .addField(`\`${this.prefix}play\``, `**Aliases:**\n> \`${this.prefix}add\`\n> \`${this.prefix}join\`\n **Description:**\n> Tocar uma música ou adicioná-la à fila.`, true)
+                .addField(`\`${this.prefix}stop\``, `**Aliases:**\n> \`${this.prefix}kill\`\n> \`${this.prefix}destroy\`\n> \`${this.prefix}leave\`\n**Description:**\n> Pare a música tocada atualmente e limpe a fila.`, true)
+                .addField(`\`${this.prefix}pause\``, `**Description:**\n> Pausar a música atual.`, true)
+                .addField(`\`${this.prefix}resume\``, `**Description:**\n> Retomar a música se ela foi pausada.`, true)
+                .addField(`\`${this.prefix}queue\``, `**Aliases:**\n> \`${this.prefix}list\`\n> \`${this.prefix}show\`\n **Description:**\n> Exibir cada título de música na fila.`, true)
+                .addField(`\`${this.prefix}np\``, `**Aliases:**\n> \`${this.prefix}nowplaying\`\n> \`${this.prefix}current\`\n **Description:**\n> Mostra a música tocada atualmente.`, true)
+                .addField(`\`${this.prefix}volume\``, `**Aliases:**\n> \`${this.prefix}setvolume\`\n **Description:**\n> Alterar o volume da música.`, true)
+                .addField(`\`${this.prefix}remove\``, `**Aliases:**\n> \`${this.prefix}delete\`\n **Description:**\n> Remova da fila a música no índice de posição.`, true)
+                .addField(`\`${this.prefix}lyrics\``, `**Description: Mostrar a letra de uma música.**\n> Show `, true)
+                .addField(`\`${this.prefix}skip\``, `**Aliases:**\n> \`${this.prefix}next\`\n> \`${this.prefix}>>\`\n **Description:**\n> Pular a música tocada atualmente.`,true)
                 .setFooter(this.client.user.username, this.client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send(HelpEmbed);
