@@ -24,19 +24,44 @@ client.on('message', message =>{
         message.reply(`A latência é de: ${timeTaken}ms.`);
     }
 });
+client.on("message", (msg) => {
+    if (msg.content.startsWith(prefix + "creator")) {
+        const Creator = new Discord.MessageEmbed()
+            .setColor("PURPLE")
+            .setTitle("Foi criado por")
+            .setDescription("@Dev | NULO#9638");
+        msg.channel.send(Creator)
+    }
+});
+
+client.on("message", message => {
+    if (message.author.bot) return;
+    if (message.channel.type == 'dm')
+        return
+    if (message.content == '<@789186131282493471>' || message.content == '<@!789186131282493471>') {
+        return message.channel.send(`Olá ${message.author} precisando de ajuda? use s.help para ver os comandos!`)
+    }
+});
+
+client.on("message", async message =>{
+    if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
+    if (!message.content.startsWith(fix.fix)) return;
+    if (message.content.startsWith(`<@${client.user.id}>`)) return;
+});
 
 const status = require('./json/fix.json')
 client.on("ready", () => {
     console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais.`)
     let activities = [
-        `Use ${status.fix}`,
+        `Use ${status.fix}help para obter ajuda!`,
         `Tocando em ${client.guilds.cache.size} servidores.`,
         `${client.channels.cache.size} canais.`,
     ],
         i = 0;
     setInterval(() => client.user.setActivity(`${activities[i++ %
         activities.length]}`, {
-        type: "PLAYING"
+        type: ""
     }), 5000);//WATCHING, LISTENING, PLAYING, STREAMING
     client.user.setStatus("idle")
 });
