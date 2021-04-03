@@ -39,7 +39,11 @@ client.on("message", message => {
     if (message.channel.type == 'dm')
         return
     if (message.content == '<@789186131282493471>' || message.content == '<@!789186131282493471>') {
-        return message.channel.send(`Olá ${message.author} precisando de ajuda? use s.help para ver os comandos!`)
+        const ms =new Discord.MessageEmbed()
+        .setColor("RED")
+        .setTitle("Precisando de ajuda?")
+        .setDescription("use s.help para ver os comandos")
+        return message.channel.send(ms)
     }
 });
 
