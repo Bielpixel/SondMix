@@ -21,16 +21,40 @@ client.on('message', message =>{
 
     if (command === "ping") {
         const timeTaken = Date.now() - message.createdTimestamp;
-        message.reply(`A latência é de: ${timeTaken}ms.`);
+
+        const cping = new Discord.MessageEmbed()
+        .setTitle("Status de Conexão")
+        .setDescription(`A latência é de ${timeTaken}ms.`)
+        .setColor("GREEN")
+        message.reply(cping);
     }
-});
-client.on("message", (msg) => {
-    if (msg.content.startsWith(prefix + "creator")) {
-        const Creator = new Discord.MessageEmbed()
+    if (command == "botinfo") {
+        const timeTaken2 = Date.now() - message.createdTimestamp;
+        const botinfo = new Discord.MessageEmbed()
+            .setTitle("SondMix Info")
             .setColor("PURPLE")
-            .setTitle("Foi criado por")
-            .setDescription("@Dev | NULO#9638");
-        msg.channel.send(Creator)
+            .setDescription(` Está em ${client.guilds.cache.size} Servidores.` )
+            .addFields({
+                name: 'Criado por @NULO#2872',
+                value:`Criadores ${client.users.cache.size}` ,
+            },
+            {
+                name:"Ping",
+                value: `${timeTaken2}`
+            },
+            {
+                name:"Prefix",
+                value: `${prefix}`
+            },
+            {
+                name: "versão",
+                value:"2.4.1"
+            },
+            )
+            .setFooter(client.user.username,client.user.displayAvatarURL())
+            .setTimestamp();
+
+        return message.channel.send(botinfo)
     }
 });
 
@@ -45,6 +69,7 @@ client.on("message", message => {
         .setDescription("use s.help para ver os comandos")
         return message.channel.send(ms)
     }
+ 
 });
 
 client.on("message", async message =>{
@@ -56,7 +81,7 @@ client.on("message", async message =>{
 
 const status = require('./json/fix.json')
 client.on("ready", () => {
-    console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais.`)
+    console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais. Criadores ${client.users.cache.size} VERSAO 2.4.1`)
     let activities = [
         `Use ${status.fix}help para obter ajuda!`,
         `Tocando em ${client.guilds.cache.size} servidores.`,
