@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js');t
 const token = require('./json/token.json')
 const client = new Discord.Client();
 const SondMix = require('./Music/src/SondMix.js');
@@ -35,8 +35,8 @@ client.on('message', message =>{
             .setColor("PURPLE")
             .setDescription(` Está em ${client.guilds.cache.size} Servidores.` )
             .addFields({
-                name: 'Criado por @NULO#2872',
-                value:`Criadores ${client.users.cache.size}` ,
+                name: 'Criado por @BIEL#2872',
+                value:`Usuarios ${client.users.cache.size}` ,
             },
             {
                 name:"Ping",
@@ -48,13 +48,34 @@ client.on('message', message =>{
             },
             {
                 name: "versão",
-                value:"2.4.1"
+                value:"2.4.3"
             },
             )
             .setFooter(client.user.username,client.user.displayAvatarURL())
             .setTimestamp();
 
         return message.channel.send(botinfo)
+    }
+    if (command == "cmd2open") {
+        const cmdopen = new Discord.MessageEmbed()
+        .setTitle('Console de testes')
+        .setDescription("Console Beta 2.4.3 está aberto")
+        .addFields({
+            name: "Cmd",
+            value: `Start :white_check_mark:`,
+        })
+        return message.channel.send(cmdopen)
+
+    }
+    if (command == "cmdclose") {
+        const cmdclose = new Discord.MessageEmbed()
+        .setTitle("Console de testes")
+        .setDescription('Console esta fechado')
+        .addFields({
+            name: " Cmd",
+            value:`Close :negative_squared_cross_mark:`
+        })
+        return message.channel.send(cmdclose)
     }
 });
 
@@ -67,6 +88,13 @@ client.on("message", message => {
         .setColor("RED")
         .setTitle("Precisando de ajuda?")
         .setDescription("use s.help para ver os comandos")
+        .addFields({
+            name:"Dica",
+            value: "Use os emojis :play_pause:  :track_next:  :speaker:  :loud_sound:  :stop_button:  Para Gerenciar a Música"
+
+        })
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp();
         return message.channel.send(ms)
     }
  
@@ -81,11 +109,12 @@ client.on("message", async message =>{
 
 const status = require('./json/fix.json')
 client.on("ready", () => {
-    console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais. Criadores ${client.users.cache.size} VERSAO 2.4.1`)
+    console.log(`Tocando em ${client.guilds.cache.size} Servidores, ${client.channels.cache.size} canais. Criadores ${client.users.cache.size}`)
     let activities = [
         `Use ${status.fix}help para obter ajuda!`,
         `Tocando em ${client.guilds.cache.size} servidores.`,
         `${client.channels.cache.size} canais.`,
+        `Versão 2.4.3`
     ],
         i = 0;
     setInterval(() => client.user.setActivity(`${activities[i++ %
