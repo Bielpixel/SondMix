@@ -3,7 +3,7 @@
 
 ## 🔩 Instalação
 ```
-npm isntall discord-music-system@latest
+npm install discord-music-system@latest
 ```
 
 ## 💻 Exemplo do código
